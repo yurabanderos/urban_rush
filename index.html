@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urban Rush — Demo (First-Person)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="startScreen">
+    <div class="logo">URBAN <span>RUSH</span></div>
+    <p class="tagline">Drive Fast. Bet Smart.</p>
+    <div class="controls">
+      <label>Bet amount (demo): <input id="bet" type="number" min="1" step="1" value="100"></label>
+      <select id="currency">
+        <option value="USDT">USDT</option>
+        <option value="USDC">USDC</option>
+      </select>
+      <button id="btnStart">Start Engine</button>
+    </div>
+    <p class="hint">Controls: ← / → to change lanes • Space = Withdraw • T = Change Time</p>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div class="hud-left">
+      <div>Multiplier: <b id="mult">1.00x</b></div>
+      <div>Speed: <b id="speed">0</b> km/h</div>
+      <div>Distance: <b id="dist">0.00</b> km</div>
+    </div>
+    <div class="hud-center">
+      <button id="btnWithdraw" class="withdraw" disabled>Withdraw</button>
+    </div>
+    <div class="hud-right">
+      <div>Fines: <b id="fines">0</b>/3</div>
+      <div>Timer: <b id="timer">0.0</b>s</div>
+      <div>Mode: <b id="mode">DAY</b></div>
+    </div>
+  </div>
+
+  <canvas id="game" width="1024" height="576" aria-label="Urban Rush Demo"></canvas>
+
+  <div id="overlay" class="hidden">
+    <div class="card">
+      <div class="logo small">URBAN <span>RUSH</span></div>
+      <h2 id="ovTitle">YOU CASHED OUT!</h2>
+      <p>Final Multiplier: <b id="ovMult">1.00x</b></p>
+      <p>Distance: <b id="ovDist">0.00</b> km</p>
+      <p>Winnings: <b id="ovWin">$0.00</b></p>
+      <div class="row">
+        <button id="btnPlayAgain">Play Again</button>
+        <button id="btnBack">Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
